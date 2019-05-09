@@ -2,9 +2,12 @@
 #include <ctime>
 
 void addition(int& fn, int& sn);
+
 void multiplication(int& fn, int& sn);
+
 void division(int& fn, int& sn);
 bool divisable(int fn, int sn);
+
 void subtraction(int& fn, int& sn);
 
 void answer_check(int answer);
@@ -27,7 +30,7 @@ int main()
 		int first_random = (rand() % 100) + 1; // Generating random number from 1 to 10.
 		int second_random = (rand() % 100) + 1; // Generating random number from 1 to 10.
 
-		int random_function = (rand() % 3);
+		int random_function = (rand() % 4);
 		funcs[random_function](first_random, second_random);
 	}
 	return 0;
@@ -73,7 +76,9 @@ void division(int& fn, int& sn)
 
 void subtraction(int& fn, int& sn)
 {
-
+	std::cout << "\033[1;36m" << fn << " - " << sn << "\033[0m" << std::endl;
+	answer = fn - sn; // Generating SUBTRACTION (-) answer.
+	answer_check(answer);
 }
 
 void answer_check(int answer)

@@ -1,3 +1,3 @@
 ﻿  Source.cpp
-C:\Users\falcu\source\repos\Test1\Test1\Source.cpp(10): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\falcu\source\repos\Test1\Test1\Source.cpp(13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Test1.vcxproj -> C:\Users\falcu\source\repos\Test1\Debug\Test1.exe

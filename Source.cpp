@@ -4,6 +4,9 @@
 int answer;
 int user_answer;
 
+void addition(int fn, int sn); 
+void answer_check(int answer);
+
 int main()
 {
 	
@@ -15,21 +18,30 @@ int main()
 
 		int random_function = (rand() % 2);
 
-		std::cout << first_random << " + " << second_random << std::endl;
-		answer = first_random + second_random; // Generating ADDITION (+) answer.
-
-		std::cout << "Input your answer: ";
-		std::cin >> user_answer;
-		std::cin.clear();
-
-		if (user_answer == answer)
-		{
-			std::cout << "Correct Answer\n" << std::endl;
-		}
-		else
-		{
-			std::cout << "Incorrect Answer\n" << std::endl;
-		}
+		addition(first_random, second_random);
 	}
 	return 0;
+}
+
+void addition(int fn, int sn)
+{
+	std::cout <<fn << " + " << sn << std::endl;
+	answer = fn + sn; // Generating ADDITION (+) answer.
+	answer_check(answer);
+}
+
+void answer_check(int answer)
+{
+	std::cout << "Input your answer: ";
+	std::cin >> user_answer;
+	std::cin.clear();
+
+	if (user_answer == answer)
+	{
+		std::cout << "Correct Answer\n" << std::endl;
+	}
+	else
+	{
+		std::cout << "Incorrect Answer\n" << std::endl;
+	}
 }

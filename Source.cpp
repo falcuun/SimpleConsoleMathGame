@@ -32,7 +32,7 @@ int main()
 void addition(int fn, int sn)
 {
 
-	std::cout << "\033[1;31m" << fn << " + " << sn << "\033[0m" << std::endl;
+	std::cout << "\033[1;34m" << fn << " + " << sn << "\033[0m" << std::endl;
 	answer = fn + sn; // Generating ADDITION (+) answer.
 	answer_check(answer);
 }
@@ -52,10 +52,10 @@ void answer_check(int answer)
 
 	if (user_answer == answer)
 	{
-		std::cout << "Correct Answer\n" << std::endl;
+		std::cout <<"\033[1;42mCorrect Answer\033[0m\n" << std::endl;
 	}
 	else
 	{
-		std::cout << "Incorrect Answer\n" << std::endl;
+		std::cout << "\033[1;41mIncorrect Answer\033[0m\n" << std::endl;
 	}
 }

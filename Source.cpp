@@ -1,15 +1,22 @@
 #include <iostream>
 #include <ctime>
 
+void addition(int fn, int sn);
+void multiplication(int fn, int sn);
+void division(int fn, int sn);
+
+void answer_check(int answer);
+
+void (*funcs[2]) (int fn, int sn);
+
 int answer;
 int user_answer;
 
-void addition(int fn, int sn); 
-void answer_check(int answer);
-
 int main()
 {
-	
+	funcs[0] = addition;
+	funcs[1] = multiplication;
+
 	srand(time(NULL));
 	while (1)
 	{
@@ -17,16 +24,23 @@ int main()
 		int second_random = (rand() % 10) + 1; // Generating random number from 1 to 100.
 
 		int random_function = (rand() % 2);
-
-		addition(first_random, second_random);
+		funcs[random_function](first_random, second_random);
 	}
 	return 0;
 }
 
 void addition(int fn, int sn)
 {
-	std::cout <<fn << " + " << sn << std::endl;
+
+	std::cout << "\033[1;31m" << fn << " + " << sn << "\033[0m" << std::endl;
 	answer = fn + sn; // Generating ADDITION (+) answer.
+	answer_check(answer);
+}
+
+void multiplication(int fn, int sn)
+{
+	std::cout << "\033[1;33m" << fn << " x " << sn << "\033[0m" << std::endl;
+	answer = fn * sn; // Generating MULTIPLICATION (*) answer.
 	answer_check(answer);
 }
 
